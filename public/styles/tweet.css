@@ -1,0 +1,91 @@
+.tweets {
+    /*padding: 0.5% 3% 3% 3%;*/
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    margin: 0 2em;
+    height: 180px;
+    opacity: .6;
+}
+
+.tweets:hover {
+    /*padding: 0.5% 3% 3% 3%;*/
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    margin: 0 2em;
+    height: 180px;
+    opacity: 1;
+}
+
+.tweets header  {
+    background-color: #00a087;
+    color: #e8fdff;
+    height: 55px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 1%
+
+}
+
+.tweets header img {
+    height: 50px;
+    width: 50px;
+    float: left;
+
+}
+
+.tweets header .user{
+    font-size: 125%;
+    line-height: 40px;
+    margin: 5px;
+    float: left;
+}
+
+.tweets p {
+    padding: 3% 3%;
+    height: 70px;
+}
+
+.tweets footer {
+    border-top: 1px solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.tweets .timeAgo {
+    font-size: 90%;
+    padding: 3% 3%;
+}
+
+.tweets header .username{
+    float: right;
+    line-height: 40px;
+    padding: 1%
+}
+
+.tweets .fa-flag {
+    visibility: hidden;
+}
+
+.tweets:hover .fa-flag {
+    visibility: visible;
+    float: right;
+}
+
+.tweets .fa-heart {
+    visibility: hidden;
+}
+
+.tweets:hover .fa-heart {
+    visibility: visible;
+    float: right;
+}
+
+.tweets .fa-retweet {
+    visibility: hidden;
+}
+
+.tweets:hover .fa-retweet {
+    visibility: visible;
+    float: right;
+}
