@@ -15,13 +15,12 @@ app.use(express.static("public"));
 
 
 // The database of tweets.
-let db;
 MongoClient.connect(MONGODB_URI, (err, dbInstance) => {
   if (err) {
     console.error(`Failed to connect: ${MONGODB_URI}`);
     throw err;
   }
-  db = dbInstance;
+  let db = dbInstance;
   // The `data-helpers` module provides an interface to the database of tweets.
   // This simple interface layer has a big benefit: we could switch out the
   // actual database it uses and see little to no changes elsewhere in the code

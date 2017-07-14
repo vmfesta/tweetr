@@ -9,17 +9,19 @@
     width: 100%;
 }
 
-#nav-bar .logo {
-    height: 80px;
-    width: 80px;
-    float: left;
-}
+#nav-bar {
+    .logo {
+        height: 80px;
+        width: 80px;
+        float: left;    
+    }
 
-#nav-bar .header {
-    font-size: 200%;
-    line-height: 65px;
-    margin: 5px;
-    float: left;
+    .header {
+        font-size: 200%;
+        line-height: 65px;
+        margin: 5px;
+        float: left;
+    }
 }
 
 .button {
