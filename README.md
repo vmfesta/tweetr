@@ -15,3 +15,8 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+##Screenshots
+!["Main Page"](https://github.com/vmfesta/tweetr/blob/master/images/Screen%20Shot%202017-07-14%20at%201.30.39%20PM.png)
+
