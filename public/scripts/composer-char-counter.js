@@ -16,5 +16,3 @@ $(document).ready(function() {
     $('textarea').on('input', count)
 });
 var element = document.getElementById("tweetText");
-console.log(element);
-//addEventListener('click', count);
