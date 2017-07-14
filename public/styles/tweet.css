@@ -70,6 +70,10 @@
     float: right;
 }
 
+.tweets .fa-flag:hover {
+    color: green;
+}
+
 .tweets .fa-heart {
     visibility: hidden;
 }
@@ -79,6 +83,10 @@
     float: right;
 }
 
+.tweets .fa-heart:hover {
+    color: red;
+}
+
 .tweets .fa-retweet {
     visibility: hidden;
 }
@@ -86,4 +94,8 @@
 .tweets:hover .fa-retweet {
     visibility: visible;
     float: right;
+}
+
+.tweets .fa-retweet:hover {
+    color: blue;
 }
