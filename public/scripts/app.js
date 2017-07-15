@@ -22,7 +22,7 @@ function createTweetElement(tweetData) {
                 <p>${escape(content)}</p>
                 <footer>
                     <span class="timeAgo">${date}</span>
-                    <i class="fa fa-heart" aria-hidden="true"></i>
+                    <i id="like-heart" class="fa fa-heart" aria-hidden="true" onClick></i>
                     <i class="fa fa-retweet" aria-hidden="true"></i>
                     <i class="fa fa-flag" aria-hidden="true"></i>
                 </footer>
@@ -111,4 +111,9 @@ $(document).ready(function(){
       });
     }
   });
+  
+  $("#like-heart").click(function() {
+    console.log("teste");
+    $("#likeHeart").prepend("<a>1</a>")
+  });  
 });
