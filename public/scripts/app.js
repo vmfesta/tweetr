@@ -1,9 +1,12 @@
+var totalTweets = 0;
+
 function createTweetElement(tweetData) {
     let userName = tweetData.user.name;
     let avatar = tweetData.user.avatars.regular;
     let handle = tweetData.user.handle; 
     let content = tweetData.content.text;
     let date = tweetData.created_at;
+    let id = getTweetId();
     date = dateDiffInDays(date);
     if(date === 0) {
       date = "Today";
@@ -12,7 +15,7 @@ function createTweetElement(tweetData) {
     }
 
     var tweet = 
-       `<section class="tweets">
+       `<section class="tweets" id="${id}">
             <article>
                 <header>
                     <img src="${avatar}">
@@ -22,7 +25,7 @@ function createTweetElement(tweetData) {
                 <p>${escape(content)}</p>
                 <footer>
                     <span class="timeAgo">${date}</span>
-                    <i id="like-heart" class="fa fa-heart" aria-hidden="true" onClick></i>
+                    <i id="like-heart" class="fa fa-heart" aria-hidden="true" onClick="likeAction(${id})" liked="false"></i>
                     <i class="fa fa-retweet" aria-hidden="true"></i>
                     <i class="fa fa-flag" aria-hidden="true"></i>
                 </footer>
@@ -31,6 +34,11 @@ function createTweetElement(tweetData) {
         </br>`
 
     return tweet;
+}
+
+function getTweetId() {
+  totalTweets++;
+  return totalTweets;
 }
 
 function escape(str) {
@@ -45,6 +53,18 @@ function dateDiffInDays(posted) {
   let now = Date.now();
   return Math.floor((now - posted) / _MS_PER_DAY);
 }
+
+function likeAction(id) {
+  var liked = ($(`#${id}`).find('#like-heart').attr("liked") == 'true');
+  if(liked) {
+    $(`#${id}`).find("#like-heart").attr("liked", 'false');
+    $(`#${id}`).find(".liked").remove();
+  } else {
+    $(`#${id}`).find("#like-heart").prepend("<a class='liked'>1</a>");
+    $(`#${id}`).find("#like-heart").attr("liked", 'true');
+  }
+}
+
 
 function renderTweets(data) {
   data.forEach(function(element) {
@@ -111,9 +131,4 @@ $(document).ready(function(){
       });
     }
   });
-  
-  $("#like-heart").click(function() {
-    console.log("teste");
-    $("#likeHeart").prepend("<a>1</a>")
-  });  
 });
